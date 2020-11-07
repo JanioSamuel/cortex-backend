@@ -10,7 +10,9 @@ class Criterio extends Model {
     })
   }
   static associate(models) {
-    // define association here
+    this.belongsTo(models.Grupo, {
+      foreignKey: 'grupo_id'
+    });
   }
 }
 
