@@ -9,6 +9,15 @@ app.use(express.json());
 app.use(cors());
 app.use(routes);
 
-app.listen(process.env.PORT || 3333, function () {
-  console.log("Running");
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
+app.get('/', (req, res) => {
+  res.send('Hello World');
 });
+
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
+// app.listen(process.env.PORT || 3333, function () {
+//   console.log("Running, port: ", process.env.PORT);
+// });

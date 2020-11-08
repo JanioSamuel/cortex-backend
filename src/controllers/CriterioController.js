@@ -38,7 +38,7 @@ module.exports = {
         include: [Grupo],
         order: [['created_at', 'DESC']]
       });
-      console.log(response);
+
       return res.json({ dataValues: response.rows.map(r => r.dataValues), count: response.count });
     } catch (err) {
       return res.send(err);
